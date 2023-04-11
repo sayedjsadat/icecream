@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 
 // Define array
 $flavors = array("vanilla", "chocolate", "strawberry", "carmel");
-$cones = array ("sugar"=>"Sugar Cone", "waffle"=>"Waffle Cone", "cup"=>"Cup");
+$cone = array ("sugar"=>"Sugar Cone", "waffle"=>"Waffle Cone", "cup"=>"Cup");
 
 include ('header.html');
 
@@ -33,7 +33,7 @@ include ('header.html');
         
         <h3>Choose One</h3>
         <?php
-        foreach ($cones as $value=>$label){
+        foreach ($cone as $value=>$label){
             echo "<label><input type='radio' name='flavor[]' value='$value'> $label</label><br>";
         }
         ?>

@@ -2,7 +2,7 @@
 /*
  * Sayed Jalal Sadat
  * 4/11/2023
- * 328/icecream/index.php
+ * 328/icecream/process.php
  * order from Ice Cream shop
  */
 
@@ -14,7 +14,7 @@ error_reporting(E_ALL);
 define('PRICE_PER_SCOOP', 2.00);
 define('SALES_TAX', 0.08);
 
-//INclude header
+//Include header
 include ('header.html');
 
 ?>
@@ -29,7 +29,7 @@ include ('header.html');
 
         //Get data from POST array
         $numScoops = $_POST['scoops'];
-        $cones = $_POST['cone'];
+        $cone = $_POST['cone'];
         $flavor = $_POST['flavor'];
         $flavorList = implode(", ", $flavor);
 
@@ -39,8 +39,8 @@ include ('header.html');
 
         //Display summary
         echo "<p>Number of scoops: $numScoops</p>";
-        echo "<p>Cone selection: $cones</p>";
-        echo "<p>Flavors: $flavorList</p>"
+        echo "<p>Cone selection: $cone</p>";
+        echo "<p>Flavors: $flavorList</p>";
         echo "<p>Subtotal: $" . number_format($subtotal, 2) . "</p>";
         echo "<p>Total: $" . number_format($total, 2) . "</p>"
     ?>
