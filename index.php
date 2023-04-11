@@ -14,18 +14,11 @@ error_reporting(E_ALL);
 $flavors = array("vanilla", "chocolate", "strawberry", "carmel");
 $cones = array ("sugar"=>"Sugar Cone", "waffle"=>"Waffle Cone", "cup"=>"Cup");
 
+include ('header.html');
 
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <title>Ice Cream Shoppe</title>
-</head><body>
+
+<body>
     <div class="container">
     <h1>Welcome to my Ice Cream Shoppe!</h1>
     <form action="process.php" method="post">
@@ -35,13 +28,13 @@ $cones = array ("sugar"=>"Sugar Cone", "waffle"=>"Waffle Cone", "cup"=>"Cup");
         <?php
             foreach ($flavors as $flavor){
                 echo "<label><input type='checkbox' name='flavor[]' value='$flavor'>" .
-                     ucfirst($flavor) . "</label><br>";
+                     ucfirst( $flavor) . "</label><br>";
             } ?>
         
         <h3>Choose One</h3>
         <?php
         foreach ($cones as $value=>$label){
-            echo "<label><input type='checkbox' name='flavor[]' value='$value'> $label</label><br>";
+            echo "<label><input type='radio' name='flavor[]' value='$value'> $label</label><br>";
         }
         ?>
 
