@@ -11,9 +11,11 @@ ini_set('display_error', 1);
 error_reporting(E_ALL);
 
 // Define array
-$flavors = array("vanilla", "chocolate", "strawberry", "carmel");
-$cone = array ("sugar"=>"Sugar Cone", "waffle"=>"Waffle Cone", "cup"=>"Cup");
+$flavors = array("vanilla", "chocolate", "strawberry", "caramel");
+$cones = array("sugar"=>"Sugar Cone", "waffle"=>"Waffle Cone", "cup"=>"Cup",
+    "choc"=>"Chocolate Dipped Waffle Cone");
 
+$title = "Order Form";
 include ('header.html');
 
 ?>
@@ -26,14 +28,15 @@ include ('header.html');
         <h3>Choose a flavor</h3>
 
         <?php
-            foreach ($flavors as $flavor){
-                echo "<label><input type='checkbox' name='flavor[]' value='$flavor'>" .
-                     ucfirst( $flavor) . "</label><br>";
-            } ?>
+            foreach ($flavors as $flavor) {
+                echo "<label><input type='checkbox' name='flavor[]' value='$flavor'> " .
+                ucfirst($flavor) . "</label><br>";
+            }
+       ?>
         
         <h3>Choose One</h3>
         <?php
-        foreach ($cone as $value=>$label){
+        foreach ($cones as $value=>$label){
             echo "<label><input type='radio' name='flavor[]' value='$value'> $label</label><br>";
         }
         ?>
